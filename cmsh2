@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="schedule-container">
+        <h2>Class Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Instructor</th>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Populate table rows dynamically -->
+                {% for class in classes %}
+                    <tr>
+                        <td>{{ class.course_name }}</td>
+                        <td>{{ class.instructor }}</td>
+                        <td>{{ class.day_of_week }}</td>
+                        <td>{{ class.start_time }} - {{ class.end_time }}</td>
+                        <td>{{ class.location }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
