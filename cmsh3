@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="announcement-container">
+        <h2>Announcements</h2>
+        <ul>
+            <!-- Populate list items dynamically -->
+            {% for announcement in announcements %}
+                <li>
+                    <h3>{{ announcement.title }}</h3>
+                    <p>{{ announcement.content }}</p>
+                    <p>Posted by: {{ announcement.author }}</p>
+                    <p>Posted at: {{ announcement.created_at }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
